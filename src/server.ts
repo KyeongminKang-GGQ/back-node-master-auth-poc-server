@@ -10,6 +10,8 @@ const ALIAS = "auth";
 
     const server = http.createServer(application.express);
     await server.listen(PORT, () => {
-        console.log(`Express server listening on port ${PORT} (alias: ${ALIAS}})`);
+        console.log(`Express server listening on port ${PORT} (alias: ${ALIAS})`);
     });
+
+    application.initialize();
 })();
