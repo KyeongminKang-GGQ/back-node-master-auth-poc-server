@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { inject, injectable } from "tsyringe";
-import { SignUpManager } from "../workers/SignUpManager";
+import { SignUpManager } from "@workers/SignUpManager";
 
 @injectable()
 export class MainController {

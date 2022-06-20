@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
-import { User, UserRepository } from "../storage/UserRepository";
-import { UidGenerator } from "../workers/UidGenerator";
+import { User, UserRepository } from "@storage/UserRepository";
+import { UidGenerator } from "@workers/UidGenerator";
 
 @injectable()
 export class SignUpManager {

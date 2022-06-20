@@ -1,5 +1,14 @@
 import "dotenv/config";
 
+import moduleAlias from "module-alias";
+moduleAlias.addAliases({
+    "@common": `${__dirname}/common`,
+    "@controllers": `${__dirname}/controllers`,
+    "@routes": `${__dirname}/routes`,
+    "@workers": `${__dirname}/workers`,
+    "@storage": `${__dirname}/storage`,
+});
+
 import * as http from "http";
 import { Application } from "./Application";
 
