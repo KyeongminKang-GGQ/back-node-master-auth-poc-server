@@ -1,9 +1,10 @@
+import "dotenv/config";
+
 import * as http from "http";
 import { Application } from "./Application";
 
-// TODO extract ALIAS, PORT to process.env
-const PORT = 3003;
-const ALIAS = "auth";
+const PORT = process.env.PORT;
+const ALIAS = process.env.ALIAS;
 
 (async () => {
     const application = new Application(ALIAS);
