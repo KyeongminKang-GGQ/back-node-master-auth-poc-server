@@ -2,6 +2,7 @@ import "reflect-metadata";
 import express from "express";
 import { Routes } from "./routes/Routes";
 import bodyParser from "body-parser";
+import injectDependency from "./common/dependency-container";
 
 export class Application {
     public express: express.Application;
@@ -10,6 +11,10 @@ export class Application {
     constructor(private alias: string) {
         this.express = express();
     }
+
+    private initializeContainer = (): void => {
+        injectDependency();
+    };
 
     private config(): void {
         this.express.use(bodyParser.json());
@@ -22,6 +27,7 @@ export class Application {
     }
 
     public initialize() {
+        this.initializeContainer();
         this.config();
         this.setRoutes();
     }
